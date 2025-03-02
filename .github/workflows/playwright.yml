@@ -1,9 +1,11 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      fail_test:
+        description: 'Fail test example'
+        type: boolean
+        required: true
 jobs:
   test:
     timeout-minutes: 60
@@ -19,3 +21,5 @@ jobs:
       run: npx playwright install --with-deps chromium
     - name: Run Playwright tests
       run: npx playwright test
+      env:
+        FAILURE: ${{ inputs.fail_test }}
