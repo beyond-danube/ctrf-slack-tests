@@ -31,7 +31,11 @@ jobs:
       if: always()
 
     - name: Send results to Slack
-      run: npx github:beyond-danube/slack-test-reporter results ctrf/ctrf-report.json -s "${{ secrets.SLACK_MENTION_USER_ID }} please hava a look"
+      run: |
+        git clone https://github.com/beyond-danube/slack-test-reporter.git
+        cd slack-test-reporter
+        tsc
+        node ./dist/cli.js results ctrf/ctrf-report.json -s "${{ secrets.SLACK_MENTION_USER_ID }} please hava a look"
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TESTS_WEBHOOK_URL }}
       if: always()
