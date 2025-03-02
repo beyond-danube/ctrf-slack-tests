@@ -24,11 +24,6 @@ jobs:
       env:
         FAILURE: ${{ inputs.fail_test }}
 
-  report:
-    if: always()
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
     - name: Publish Test Report
       uses: ctrf-io/github-test-reporter@v1
       with:
