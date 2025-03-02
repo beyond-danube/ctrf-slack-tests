@@ -33,3 +33,9 @@ jobs:
       with:
         report-path: './ctrf/*.json'
       if: always()
+
+    - name: Send results to Slack
+      run: npx slack-ctrf results ctrf/ctrf-report.json
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TESTS_WEBHOOK_URL }}
+      if: always()
