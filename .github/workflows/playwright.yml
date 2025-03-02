@@ -36,7 +36,7 @@ jobs:
         cd slack-test-reporter
         npm ci
         tsc
-        node ./dist/cli.js results ctrf/ctrf-report.json -s "${{ secrets.SLACK_MENTION_USER_ID }} please hava a look"
+        node ./dist/cli.js results ../ctrf/ctrf-report.json -s "${{ secrets.SLACK_MENTION_USER_ID }} please hava a look"
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_TESTS_WEBHOOK_URL }}
       if: always()
