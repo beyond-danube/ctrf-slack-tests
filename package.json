@@ -1,0 +1,17 @@
+{
+  "name": "ctrf-slack-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.8"
+  },
+  "dependencies": {
+    "playwright-ctrf-json-reporter": "^0.0.18"
+  }
+}
