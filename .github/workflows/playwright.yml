@@ -25,6 +25,7 @@ jobs:
         FAILURE: ${{ inputs.fail_test }}
 
   report:
+    if: always()
     needs: test
     runs-on: ubuntu-latest
     steps:
