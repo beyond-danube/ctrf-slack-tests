@@ -25,7 +25,11 @@ export default defineConfig({
   reporter: [
     ['html'],
     ['list'],
-    ['playwright-ctrf-json-reporter', {}]
+    ['playwright-ctrf-json-reporter', {
+      buildName: 'MyApp Build',       // Optional: Specify the build name.
+      buildNumber: '100',             // Optional: Specify the build number.
+      buildUrl: "https://ctrf.io",    // Optional: Specify the build url.
+    }]
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
